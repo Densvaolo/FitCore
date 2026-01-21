@@ -1,4 +1,5 @@
-﻿using FitCore.Domain.Entities;
+﻿using FitCore.Application.Common.Interfaces;
+using FitCore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace FitCore.Infrastructure.Persistence
 {
-    public class FitCoreDbContext : DbContext
+    public class FitCoreDbContext : DbContext, IFitCoreDbContext
     {
         public FitCoreDbContext(DbContextOptions <FitCoreDbContext> options) : base(options)
         {
