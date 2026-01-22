@@ -9,6 +9,7 @@ namespace FitCore.Application.Common.Interfaces
     public interface IFitCoreDbContext
     {
         DbSet<User> Users { get; }
+        DbSet<Workout> Workouts { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

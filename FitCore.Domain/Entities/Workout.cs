@@ -8,7 +8,7 @@ namespace FitCore.Domain.Entities
     {
         public Guid Id { get; set; } 
         public DateTime Date { get; set; }
-        public string Type { get; set; } = string.Empty;
+        public int Type { get; set; } 
         public string? Notes { get; set; }
         public ICollection<ExerciseSet> Sets { get; set; } = new List<ExerciseSet>();
         public Guid UserId { get; set; }
