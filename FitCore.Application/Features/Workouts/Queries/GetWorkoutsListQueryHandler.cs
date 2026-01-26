@@ -18,6 +18,7 @@ namespace FitCore.Application.Features.Workouts.Queries
         {          
             return await _context.Workouts
                 .Where(w => w.UserId == request.UserId)
+                .Include(w => w.Sets)
                 .ToListAsync(cancellationToken);
         }
     }

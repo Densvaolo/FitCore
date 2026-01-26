@@ -1,4 +1,5 @@
 ﻿using FitCore.Application.Common.Interfaces;
+using FitCore.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,9 @@ namespace FitCore.Application.Features.Workouts.Commands.CreateWorkout
                 UserId = request.UserId,
                 Date = request.Date,
                 Type = request.Type,
-                Notes = request.Notes
+                Notes = request.Notes,
+                Sets = request.Sets.Select(
+                    s => new ExerciseSet { Reps = s.Reps, Weight = s.Weight, ExerciseName = s.ExerciseName }).ToList()
             };
             _context.Workouts.Add(workout);
             await _context.SaveChangesAsync(cancellationToken);

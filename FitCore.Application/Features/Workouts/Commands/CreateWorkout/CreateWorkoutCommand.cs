@@ -11,5 +11,6 @@ namespace FitCore.Application.Features.Workouts.Commands.CreateWorkout
         public DateTime Date { get; set; }
         public int Type { get; set; }
         public string Notes { get; set; } = string.Empty;
+        public List<WorkoutSetDto> Sets { get; set; } = new List<WorkoutSetDto>();
     }
 }
