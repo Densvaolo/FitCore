@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using FitCore.Domain.Entities;
 using FitCore.Application.Common.Interfaces;
+using FluentValidation;
 
 namespace FitCore.Application.Features.Users.Commands.CreateUser
 {
@@ -12,6 +13,7 @@ namespace FitCore.Application.Features.Users.Commands.CreateUser
         public CreateUserCommandHandler(IFitCoreDbContext context)
         {
             _context = context;
+           
         }
 
         public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)

@@ -11,5 +11,6 @@ namespace FitCore.Application.Common.Interfaces
         DbSet<User> Users { get; }
         DbSet<Workout> Workouts { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+
     }
 }

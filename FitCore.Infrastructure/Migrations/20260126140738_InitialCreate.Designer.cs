@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitCore.Infrastructure.Migrations
 {
     [DbContext(typeof(FitCoreDbContext))]
-    [Migration("20260121122712_InitialCreate")]
+    [Migration("20260126140738_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -98,9 +98,8 @@ namespace FitCore.Infrastructure.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
